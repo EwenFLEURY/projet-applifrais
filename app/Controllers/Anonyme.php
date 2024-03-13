@@ -13,6 +13,9 @@ class Anonyme extends BaseController
 			$data = array();
 			return view('v_connexion', $data);
 		}
+		elseif ($authentif->isComptable()) {
+			return redirect()->to('/comptable');
+		}
 		else
 		{
 			return redirect()->to('/visiteur');
@@ -39,7 +42,7 @@ class Anonyme extends BaseController
 		}
 		else
 		{
-			$authentif->connecter($authUser['id'], $authUser['nom'], $authUser['prenom']);
+			$authentif->connecter($authUser['id'], $authUser['nom'], $authUser['prenom'], $authUser['nomRole']);
 			return $this->index();
 		}
 	}

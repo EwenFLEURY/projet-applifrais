@@ -30,13 +30,14 @@ class Authentif extends Model
 	 * @param $nom
 	 * @param $prenom
 	 */
-	public function connecter($idUser,$nom,$prenom)
+	public function connecter($idUser,$nom,$prenom,$role)
 	{ // TODO : Lorsqu'il y aura d'autres profils d'utilisateurs (comptables, etc.)
 	  // il faudra ajouter cette information de profil dans la session 
 		$authUser = array(
                    'idUser'  => $idUser,
                    'nom' => $nom,
-                   'prenom' => $prenom
+                   'prenom' => $prenom,
+				   'role' => $role
 				);
 
 		$this->session->set($authUser);
@@ -66,5 +67,15 @@ class Authentif extends Model
 		$authUser = $dao->getInfosVisiteur($login, $mdp);
 
 		return $authUser;
+	}
+
+	public function isVisiteur()
+	{
+		return $this->session->get('role') == "Visiteur";
+	}
+
+	public function isComptable()
+	{
+		return $this->session->get('role') == "Comptable";
 	}
 }

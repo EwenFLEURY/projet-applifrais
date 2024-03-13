@@ -18,3 +18,171 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
  6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
  7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-12 10:13:50 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'applifrais'@'localhost' to database 'applifrais' in P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'applifrais', 'applifrais', 'applifrais', 3306, '', 0)
+#1 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*)...')
+#4 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+#5 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+#6 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+#7 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+#8 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+#9 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' to database '****' in P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*)...')
+#3 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+#4 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+#5 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+#6 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+#7 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+#8 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-12 10:13:50 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' to database '****'
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*) as nblignesfrais 
+				from fichefrais 
+				where fichefrais.mois = \'202312\' and fichefrais.idvisiteur = \'a17\'')
+ 3 APPPATH\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+ 4 APPPATH\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+ 5 APPPATH\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-12 10:13:56 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'applifrais'@'localhost' to database 'applifrais' in P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'applifrais', 'applifrais', 'applifrais', 3306, '', 0)
+#1 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*)...')
+#4 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+#5 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+#6 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+#7 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+#8 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+#9 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' to database '****' in P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*)...')
+#3 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+#4 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+#5 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+#6 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+#7 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+#8 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-12 10:13:56 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' to database '****'
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*) as nblignesfrais 
+				from fichefrais 
+				where fichefrais.mois = \'202312\' and fichefrais.idvisiteur = \'a17\'')
+ 3 APPPATH\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+ 4 APPPATH\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+ 5 APPPATH\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-12 10:14:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'applifrais'@'localhost' to database 'applifrais' in P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'applifrais', 'applifrais', 'applifrais', 3306, '', 0)
+#1 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*)...')
+#4 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+#5 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+#6 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+#7 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+#8 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+#9 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' to database '****' in P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*)...')
+#3 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+#4 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+#5 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+#6 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+#7 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+#8 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-12 10:14:22 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' to database '****'
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*) as nblignesfrais 
+				from fichefrais 
+				where fichefrais.mois = \'202312\' and fichefrais.idvisiteur = \'a17\'')
+ 3 APPPATH\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+ 4 APPPATH\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+ 5 APPPATH\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-12 10:15:40 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'applifrais'@'localhost' to database 'applifrais' in P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'applifrais', 'applifrais', 'applifrais', 3306, '', 0)
+#1 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*)...')
+#4 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+#5 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+#6 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+#7 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+#8 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+#9 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' to database '****' in P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*)...')
+#3 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+#4 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+#5 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\app\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+#6 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+#7 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+#8 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 P:\Documents\AP\GSB - Projet AppliFrais\applifrais-CI4.2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-12 10:15:40 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' to database '****'
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\DataAccess.php(158): CodeIgniter\Database\BaseConnection->query('select count(*) as nblignesfrais 
+				from fichefrais 
+				where fichefrais.mois = \'202312\' and fichefrais.idvisiteur = \'a17\'')
+ 3 APPPATH\Models\ActionsVisiteur.php(34): App\Models\DataAccess->existeFiche('a17', '202312')
+ 4 APPPATH\Controllers\Visiteur.php(33): App\Models\ActionsVisiteur->checkLastSix('a17')
+ 5 APPPATH\Controllers\Visiteur.php(49): App\Controllers\Visiteur->checkAuth()
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Visiteur->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

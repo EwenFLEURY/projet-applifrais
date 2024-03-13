@@ -5,9 +5,9 @@ use \App\Models\Authentif;
 use \App\Models\ActionsVisiteur;
 
 /**
- * Contrôleur du module VISITEUR de l'application
+ * Contrôleur du module COMPTABLE de l'application
 */
-class Visiteur extends BaseController {
+class Comptable extends BaseController {
 
    private $authentif;
    private $actVisiteur;
@@ -29,7 +29,7 @@ class Visiteur extends BaseController {
 			$this->actVisiteur->checkLastSix($this->idVisiteur);
 			$res = true;
 		}
-		elseif ($checkForRole && $this->authentif->isVisiteur() && $this->authentif->estConnecte()) {
+		elseif ($checkForRole && $this->authentif->isComptable() && $this->authentif->estConnecte()) {
 			$this->actVisiteur = new ActionsVisiteur();
 
 			$this->session = session();
@@ -54,7 +54,7 @@ class Visiteur extends BaseController {
 		// envoie de la vue accueil du visiteur
 		$data['identite'] = $this->session->get('prenom').' '.$this->session->get('nom');
 
-		return view('v_visiteurAccueil', $data);
+		return view('v_comptableAccueil', $data);
 	}
 
 	public function mesFiches($message = "")
@@ -64,7 +64,7 @@ class Visiteur extends BaseController {
 		$data['mesFiches'] = $this->actVisiteur->getLesFichesDuVisiteur($this->idVisiteur);
 		$data['notify'] = $message;
 
-		return view('v_visiteurMesFiches', $data);	
+		return view('v_comptableMesFiches', $data);	
 	}
 
 	public function seDeconnecter()	
@@ -81,7 +81,7 @@ class Visiteur extends BaseController {
 		$data['mois'] = $mois;
 		$data['fiche'] = $this->actVisiteur->getUneFiche($this->idVisiteur, $mois);
 		
-		return view('v_visiteurVoirFiche', $data);
+		return view('v_comptableVoirFiche', $data);
 	}
 
 	public function modMaFiche($mois, $message = "")
@@ -93,7 +93,7 @@ class Visiteur extends BaseController {
 		$data['mois'] = $mois;
 		$data['fiche'] = $this->actVisiteur->getUneFiche($this->idVisiteur, $mois);
 		
-		return view('v_visiteurModFiche', $data);
+		return view('v_comptableModFiche', $data);
 	}
 
 	public function signeMaFiche($mois)
