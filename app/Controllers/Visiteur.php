@@ -148,4 +148,10 @@ class Visiteur extends BaseController {
 		// ... et on revient en modification de la fiche
 		return $this->modMaFiche($mois, 'Ligne "Hors forfait" supprimée ...');				
 	}
+
+	public function aPropos(){
+		if (!$this->checkAuth()) return $this->unauthorizedAccess();
+		$data['identite'] = $this->session->get('prenom').' '.$this->session->get('nom');
+		return view('v_VisiteurApropos', $data);
+	}
 }

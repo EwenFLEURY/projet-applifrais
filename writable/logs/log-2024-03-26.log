@@ -1,0 +1,12 @@
+CRITICAL - 2024-03-26 08:43:19 --> Undefined variable $identite
+in APPPATH\Views\l_visiteur.php on line 29.
+ 1 APPPATH\Views\l_visiteur.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $identite', 'APPPATH\\Views\\l_visiteur.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\l_visiteur.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('l_visiteur', [], true)
+ 5 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('v_apropos', [], true)
+ 6 APPPATH\Controllers\Visiteur.php(154): view('v_apropos')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Visiteur->aPropos()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visiteur))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

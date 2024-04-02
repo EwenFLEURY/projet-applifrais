@@ -37,6 +37,9 @@
 					<li class="smenu">
 						<?= anchor('comptable/mesFiches', 'Mes fiches de frais', 'title="Consultation de mes fiches de frais"') ?>
 					</li>
+					<li class="smenu">
+						<?= anchor('comptable/aPropos', 'info inutile', 'title="information"') ?>
+					</li>
 					<br/>
 					<li class="smenu">
 						<?= anchor('comptable/seDeconnecter', 'Se déconnecter', 'title="Déconnexion"') ?>

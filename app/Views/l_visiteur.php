@@ -37,6 +37,9 @@
 					<li class="smenu">
 						<?= anchor('visiteur/mesFiches', 'Mes fiches de frais', 'title="Consultation de mes fiches de frais"') ?>
 					</li>
+					<li class="smenu">
+						<?= anchor('visiteur/aPropos', 'info inutile', 'title="information"') ?>
+					</li>
 					<br/>
 					<li class="smenu">
 						<?= anchor('visiteur/seDeconnecter', 'Se déconnecter', 'title="Déconnexion"') ?>

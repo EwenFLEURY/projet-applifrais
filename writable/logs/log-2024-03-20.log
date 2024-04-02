@@ -1,0 +1,40 @@
+ERROR - 2024-03-20 10:35:19 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\Users\rclerge\Desktop\applifrais\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\Users\rclerge\Desktop\applifrais\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'applifrais', 'applifrais', 'applifrais', 3306, '', 0)
+#1 C:\Users\rclerge\Desktop\applifrais\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\rclerge\Desktop\applifrais\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\rclerge\Desktop\applifrais\app\Models\DataAccess.php(32): CodeIgniter\Database\BaseConnection->query('SELECT visiteur...', Array)
+#4 C:\Users\rclerge\Desktop\applifrais\app\Models\Authentif.php(67): App\Models\DataAccess->getInfosVisiteur('dandre', 'oppg5')
+#5 C:\Users\rclerge\Desktop\applifrais\app\Controllers\Anonyme.php(36): App\Models\Authentif->authentifier('dandre', 'oppg5')
+#6 C:\Users\rclerge\Desktop\applifrais\system\CodeIgniter.php(927): App\Controllers\Anonyme->seConnecter()
+#7 C:\Users\rclerge\Desktop\applifrais\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anonyme))
+#8 C:\Users\rclerge\Desktop\applifrais\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\rclerge\Desktop\applifrais\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in C:\Users\rclerge\Desktop\applifrais\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\Users\rclerge\Desktop\applifrais\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\rclerge\Desktop\applifrais\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\rclerge\Desktop\applifrais\app\Models\DataAccess.php(32): CodeIgniter\Database\BaseConnection->query('SELECT visiteur...', Array)
+#3 C:\Users\rclerge\Desktop\applifrais\app\Models\Authentif.php(67): App\Models\DataAccess->getInfosVisiteur('dandre', 'oppg5')
+#4 C:\Users\rclerge\Desktop\applifrais\app\Controllers\Anonyme.php(36): App\Models\Authentif->authentifier('dandre', 'oppg5')
+#5 C:\Users\rclerge\Desktop\applifrais\system\CodeIgniter.php(927): App\Controllers\Anonyme->seConnecter()
+#6 C:\Users\rclerge\Desktop\applifrais\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anonyme))
+#7 C:\Users\rclerge\Desktop\applifrais\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\rclerge\Desktop\applifrais\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-20 10:35:19 --> Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\DataAccess.php(32): CodeIgniter\Database\BaseConnection->query('SELECT visiteur.id AS id, visiteur.nom AS nom, visiteur.prenom AS prenom, roles.nomRole AS nomRole
+				FROM visiteur 
+				JOIN roles ON visiteur.idRole=roles.idRole
+				WHERE visiteur.login=? AND visiteur.mdp=?', [...])
+ 3 APPPATH\Models\Authentif.php(67): App\Models\DataAccess->getInfosVisiteur('dandre', 'oppg5')
+ 4 APPPATH\Controllers\Anonyme.php(36): App\Models\Authentif->authentifier('dandre', 'oppg5')
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Anonyme->seConnecter()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anonyme))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
